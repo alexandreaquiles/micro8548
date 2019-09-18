@@ -1,0 +1,14 @@
+https://microservices.io/patterns/data/shared-database.html
+https://microservices.io/patterns/data/database-per-service.html
+
+https://hub.docker.com/_/mysql
+https://hub.docker.com/_/mongo
+
+https://microservices.io/patterns/data/polling-publisher.html
+https://microservices.io/patterns/data/transaction-log-tailing.html
+https://en.wikipedia.org/wiki/Change_data_capture
+https://hipsters.tech/estrategias-de-migracao-de-dados-no-elo7-hipsters-on-the-road-07/
+https://debezium.io/documentation/reference/0.9/
+https://developers.redhat.com/books/migrating-microservice-databases-relational-monolith-distributed-data/
+http://shop.oreilly.com/product/0636920233169.do
+
