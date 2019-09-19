@@ -8,6 +8,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
+import org.springframework.transaction.annotation.Transactional;
 
 import br.com.caelum.eats.administrativo.TipoDeCozinha;
 import br.com.caelum.eats.seguranca.User;
@@ -25,6 +26,7 @@ interface RestauranteRepository extends JpaRepository<Restaurante, Long> {
 	@Query("select r from Restaurante r where r.user.name = :username")
 	Restaurante findByUsername(@Param("username") String username);
 
+	@Transactional
 	@Modifying(clearAutomatically = true)
 	@Query("update Restaurante r set r.aprovado = true where r.id = :id")
 	void aprovaPorId(@Param("id") Long id);
