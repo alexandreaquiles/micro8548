@@ -22,6 +22,7 @@ class PagamentoController {
 
 	private PagamentoRepository pagamentoRepo;
 	private PedidoRestClient pedidoRestClient;
+	private NotificadorPagamentoConfirmado notificador;
 
 	@GetMapping("/{id}")
 	PagamentoDto detalha(@PathVariable("id") Long id) {
@@ -44,6 +45,7 @@ class PagamentoController {
 		pagamentoRepo.save(pagamento);
 		
 		pedidoRestClient.avisaQueFoiPago(pagamento.getPedidoId());
+		notificador.notificaPagamentoConfirmado(pagamento);
 		
 		return new PagamentoDto(pagamento);
 	}
